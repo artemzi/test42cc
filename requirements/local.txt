@@ -1,0 +1,4 @@
+# Local development dependencies go here
+-r base.txt
+
+ipython==0.13.2
