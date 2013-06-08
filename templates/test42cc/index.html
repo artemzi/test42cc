@@ -13,6 +13,8 @@
                 <p><small>Date of birth</small>: {{ p.birth_date }}</p>
                 <p><small>Bio:</small>
                     <p>{{ p.bio }}</p>
+            <hr />
+            <a href="/requests/">requests</a>
             </div>
             <div style="float: left; width: 350px">
             <p>Contacts:</p>
@@ -21,7 +23,8 @@
                 <p><small>Skype:</small> {{ p.skype }}</p>
                 <p><small>Other Contacts:</small>
                     {{ p.other_contacts }}</p>
-            <br />
+            <br /> <br />
+            <hr />
             </div>
         {% endfor %}
     {% else %}

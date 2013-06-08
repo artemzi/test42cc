@@ -21,6 +21,8 @@ path.append(DJANGO_ROOT)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+ENABLE_HTTP_REQUEST_LOGGING = True
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -117,6 +119,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'middleware.HttpRequestDbLoggingMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -150,6 +153,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     't1_contact',
+    't3_httprequests',
 )
 
 # A sample logging configuration. The only tangible logging
