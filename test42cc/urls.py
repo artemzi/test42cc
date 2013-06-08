@@ -9,6 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns(
     '',
     url(r'^$', include('t1_contact.urls')),
+    url(r'^requests/$', include('t3_httprequests.urls')),
     # url(r'^test42cc/', include('test42cc.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
