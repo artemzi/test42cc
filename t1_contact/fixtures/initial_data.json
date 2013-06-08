@@ -1,0 +1,16 @@
+[
+    {
+        "fields": {
+            "first_name": "Artem",
+            "last_name": "Zinoviev",
+            "birth_date": "1983-05-06",
+            "bio": "I was born in Makeevka(Donetsk, Ukraine),  lived in Yakutiya, Kiev, Dnepropetrovsk, Khmelnitsky and now is working from Home.\n",
+            "email": "arzinoviev@gmail.com",
+            "jabber": "arzinoviev@gmail.com",
+            "skype": "zinovievartem",
+            "other_contacts": "mobile phone: ++380990305593"
+        },
+        "model": "t1_contact.Person",
+        "pk": 1
+    }
+]
