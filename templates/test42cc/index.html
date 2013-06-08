@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}Index page.{% endblock title %}
+{% block title %}{% endblock title %}
 
 {% block content %}
 
-    <h3>test.</h3>
+    <h3>42 Coffee Cups Test Assignment</h3>
+    {% if person %}
+        {% for p in person %}
+            <div style="float: left; width: 250px">
+                <p><small>Name</small>: {{ p.first_name }}</p>
+                <p><small>Last Name</small>: {{ p.last_name }}</p>
+                <p><small>Date of birth</small>: {{ p.birth_date }}</p>
+                <p><small>Bio:</small>
+                    <p>{{ p.bio }}</p>
+            </div>
+            <div style="float: left; width: 350px">
+            <p>Contacts:</p>
+                <p><small>Email:</small> {{ p.email}}</p>
+                <p><small>Jabber:</small> {{ p.jabber }}</p>
+                <p><small>Skype:</small> {{ p.skype }}</p>
+                <p><small>Other Contacts:</small>
+                    {{ p.other_contacts }}</p>
+            <br />
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>no person found.</p>
+    {% endif %}
 {% endblock content %}

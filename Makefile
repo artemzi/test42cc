@@ -16,4 +16,4 @@ migrate:
 	$(MANAGE) migrate --settings=test42cc.settings
 
 test:
-	$(MANAGE) test
+	$(MANAGE) test t1_contact
