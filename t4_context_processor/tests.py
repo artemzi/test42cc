@@ -1,16 +1,7 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
+from selenium import webdriver
 
-Replace this with more appropriate tests for your application.
-"""
+browser = webdriver.Firefox()
+browser.get('http://localhost:8000')
 
-from django.test import TestCase
-
-
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+assert '42cc' in browser.title  # 42cc will pass in template base.html title by const from settings.py
+browser.quit()
