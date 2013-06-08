@@ -150,6 +150,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'south',
     't1_contact',
+    't3_httprequests',
 )
 
 # A sample logging configuration. The only tangible logging
