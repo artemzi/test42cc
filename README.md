@@ -12,6 +12,8 @@
 
 ### TODO:
     
-    deploy last commit (style)
-    
-    next tiket 
+    1.deploy last commit (style)
+    (* need remove test from t4... barista doesn`t
+    have webdriver.firefox in sys path)    
+
+    2.next tiket 
