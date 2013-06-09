@@ -15,5 +15,8 @@ syncdb:
 migrate:
 	$(MANAGE) migrate --settings=test42cc.settings
 
+collectstatic:
+	$(MANAGE) collectstatic
+
 test:
 	$(MANAGE) test t1_contact t4_context_processor
