@@ -5,27 +5,34 @@
 {% block content %}
 
     <h3>42 Coffee Cups Test Assignment</h3>
+
+
+
     {% if person %}
         {% for p in person %}
-            <div style="float: left; width: 250px">
-                <p><small>Name</small>: {{ p.first_name }}</p>
-                <p><small>Last Name</small>: {{ p.last_name }}</p>
-                <p><small>Date of birth</small>: {{ p.birth_date }}</p>
-                <p><small>Bio:</small>
-                    <p>{{ p.bio }}</p>
-            <hr />
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <p><small><b>Name</b></small>: {{ p.first_name }}</p>
+                    <p><small><b>Last Name</b></small>: {{ p.last_name }}</p>
+                    <p><small><b>Date of birth</b></small>: {{ p.birth_date }}</p>
+                    <p style="max-width: 250px;"><small><b>Bio:</b></small>
+                    {{ p.bio }}</p>
+                </div>
+                <div class="span4">
+                    <p>Contacts:</p>
+                        <p><small><b>Email:</b></small> {{ p.email}}</p>
+                        <p><small><b>Jabber:</b></small> {{ p.jabber }}</p>
+                        <p><small><b>Skype:</b></small> {{ p.skype }}</p>
+                        <p><small><b>Other Contacts:</b></small>
+                            {{ p.other_contacts }}</p>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="container-fluid">
             <a href="/requests/">requests</a>
-            </div>
-            <div style="float: left; width: 350px">
-            <p>Contacts:</p>
-                <p><small>Email:</small> {{ p.email}}</p>
-                <p><small>Jabber:</small> {{ p.jabber }}</p>
-                <p><small>Skype:</small> {{ p.skype }}</p>
-                <p><small>Other Contacts:</small>
-                    {{ p.other_contacts }}</p>
-            <br /> <br />
-            <hr />
-            </div>
+        </div>    
         {% endfor %}
     {% else %}
         <p>no person found.</p>
