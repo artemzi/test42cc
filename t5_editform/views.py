@@ -15,7 +15,4 @@ class CustomProfileUpdateView(LoginRequiredMixin, CsrfExemptMixin, UpdateView):
     form = EditForm
     template_name = "t5_editform/editform.html"
     success_url = '/'
-
-    def post(self, request, *args, **kwargs):
-        pass
-        return HttpResponseRedirect(self.get_success_url())
+    
