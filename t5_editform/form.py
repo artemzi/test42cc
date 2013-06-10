@@ -1,7 +1,9 @@
 from django import forms
 
+from t1_contact.models import Person
 
-class EditForm(forms.Form):
+
+class EditForm(forms.ModelForm):
     first_name = forms.CharField(label='Name', max_length=50)
     last_name = forms.CharField(label='Last name', max_length=50)
     birth_date = forms.DateField(label='Date of birth')
@@ -12,5 +14,5 @@ class EditForm(forms.Form):
     photo = forms.ImageField(label="Photo")
     other_contacts = forms.CharField(label='Other contacts',widget=forms.Textarea, max_length=10000)
 
-    def __unicode__(self):
-        return "{}".format(self.first_name)
+    class Meta(object):
+        model = Person

@@ -7,11 +7,27 @@
     <div class="span11">
 
     <form class="modal-form">{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" name="submit" value="Save" alt="Save changes" />
-        <a href="/">Cancel</a>
-        </form>
-    <hr/>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <p><small><b>Name</b></small>: {{ form.first_name }}</p>
+                    <p><small><b>Last Name</b></small>: {{ form.last_name }}</p>
+                    <p><small><b>Date of birth</b></small>: {{ form.birth_date }}</p>
+                    <p><small><b>Photo</b></small>: {{ form.photo }}</p>
+                </div>
+                <div class="span4">
+                    <p>Contacts:</p>
+                        <p><small><b>Email:</b></small></p> {{ form.email}}
+                        <p><small><b>Jabber:</b></small> {{ form.jabber }}</p>
+                        <p><small><b>Skype:</b></small> {{ form.skype }}</p>
+                        <p><small><b>Other Contacts:</b></small>
+                            {{ form.other_contacts }}</p>
+                    <p style="max-width: 250px;"><small><b>Bio:</b></small></p>
+                    {{ form.bio }}
+                </div>
+            </div>
+        </div>
+        <hr />
 
     </div>
 
