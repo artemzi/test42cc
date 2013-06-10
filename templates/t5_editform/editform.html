@@ -6,7 +6,7 @@
     <div class="span1"></div>
     <div class="span11">
 
-    <form class="modal-form">{% csrf_token %}
+    <form class="modal-form" method="post">{% csrf_token %}
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span4">
@@ -26,7 +26,7 @@
                     {{ form.bio }}
                 </div>
             </div>
-                <input type="submit" name="submit" value="Save" alt="Save changes" />
+                <button type="submit" class="btn">Save</button>
                 <a href="/">Cancel</a>
         </div>
         <hr />

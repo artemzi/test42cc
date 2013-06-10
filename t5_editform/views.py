@@ -1,14 +1,21 @@
-# from django.views.generic import UpdateView
+from django.views.generic import UpdateView
+from django.http import HttpResponseRedirect
+from braces.views import LoginRequiredMixin, CsrfExemptMixin
 
-# from braces.views import LoginRequiredMixin, CsrfExemptMixin
+from t1_contact.models import CustomProfile
+from t5_editform.form import EditForm
 
-# from t1_contact.models import Person
 
+class CustomProfileUpdateView(LoginRequiredMixin, CsrfExemptMixin, UpdateView):
+    """
+    You must login to see template edit_person
 
-# class UpdatePersonView(LoginRequiredMixin, CsrfExemptMixin, UpdateView):
-#     """
-#     You must login to see template edit_person
+    """
+    model = CustomProfile
+    form = EditForm
+    template_name = "t5_editform/editform.html"
+    success_url = '/'
 
-#     """
-#     model = Person
-#     template_name = "t5_editform/editform.html"
+    def post(self, request, *args, **kwargs):
+        pass
+        return HttpResponseRedirect(self.get_success_url())

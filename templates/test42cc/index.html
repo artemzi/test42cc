@@ -8,16 +8,20 @@
 
 
 
-    {% if person %}
-        {% for p in person %}
+    {% if CustomProfile %}
+        {% for p in CustomProfile %}
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span4">
                     <p><small><b>Name</b></small>: {{ p.first_name }}</p>
                     <p><small><b>Last Name</b></small>: {{ p.last_name }}</p>
                     <p><small><b>Date of birth</b></small>: {{ p.birth_date }}</p>
-                    <p style="max-width: 250px;"><small><b>Bio:</b></small>
-                    {{ p.bio }}</p>
+                    <p style="max-width: 250px;"><small><b>Photo:</b></small></p>
+                    {% if p.photo %}
+                    <img src={{ p.photo }} class="img-rounded" />
+                    {% else %}
+                        <h3>Error: no photo found.</h3>
+                    {% endif %}
                 </div>
                 <div class="span4">
                     <p>Contacts:</p>
@@ -26,6 +30,8 @@
                         <p><small><b>Skype:</b></small> {{ p.skype }}</p>
                         <p><small><b>Other Contacts:</b></small>
                             {{ p.other_contacts }}</p>
+                    <p style="max-width: 250px;"><small><b>Bio:</b></small>
+                    {{ p.bio }}</p>
                 </div>
             </div>
         </div>
