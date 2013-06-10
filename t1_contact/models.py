@@ -10,7 +10,7 @@ class CustomProfile(models.Model):
     jabber = models.EmailField()
     skype = models.CharField(max_length=30)
     other_contacts = models.TextField()
-    photo = models.ImageField(upload_to="static/img/photo", blank=True)
+    photo = models.ImageField(upload_to="assets/img/photo", blank=True)
 
     def __unicode__(self):
         return self.first_name
