@@ -29,6 +29,11 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'arzinoviev@gmail.com'
+EMAIL_HOST_PASSWORD = 'password'  # os.environ['EMAIL_HOST_PASSWORD']
+EMAIL_USE_TLS = True
+
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -164,6 +169,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
+    'registration',
     't1_contact',
     't3_httprequests',
     't4_context_processor',

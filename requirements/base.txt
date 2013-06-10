@@ -5,3 +5,5 @@ distribute==0.6.34
 wsgiref==0.1.2
 django-braces==1.0.0
 selenium==2.33.0
+hg+https://bitbucket.org/LinnTroll/django-registration-1.5
+PIL==1.1.7
