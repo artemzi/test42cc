@@ -1,5 +1,4 @@
 from django.views.generic import UpdateView
-from django.http import HttpResponseRedirect
 from braces.views import LoginRequiredMixin, CsrfExemptMixin
 
 from t1_contact.models import CustomProfile
