@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}42 Coffee Cups Test Assignment: Edit{% endblock title %}
+
+
+{% block content %}
+    <div class="span1"></div>
+    <div class="span11">
+
+    <form class="modal-form">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit" value="Save" alt="Save changes" />
+        <a href="/">Cancel</a>
+        </form>
+    <hr/>
+
+    </div>
+
+
+{% endblock content %}
