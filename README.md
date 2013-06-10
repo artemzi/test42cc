@@ -4,16 +4,15 @@
         git:  https://github.com/unSaint/test42cc.git
         Deployed to:  http://test42cc-3.artemzinoviev.at.getbarista.com/
 
-    t3_httprequests for #3(+/-):
+    t3_httprequests for #3(Done):
         TODO: add style.
 
     t4_context_processor #4(Done):
         TODO: add more real test.
 
+    t5_editform #5(Done):
+        TODO: deploy
+
 ### TODO:
     
-    1.deploy last commit (style)
-    (* need remove test from t4... barista doesn`t
-    have webdriver.firefox in sys path)    
-
-    2.next tiket 
+    1. next tiket 
