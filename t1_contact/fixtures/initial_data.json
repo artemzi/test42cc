@@ -13,5 +13,23 @@
         },
         "model": "t1_contact.CustomProfile",
         "pk": 1
+    },
+    {
+    "pk": 1, 
+    "model": "auth.user", 
+    "fields": {
+        "username": "artem", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-06-10T13:40:59.500Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$22wM1HJlR0GI$SELnyhv67VCiQEz/a0/WAXwSZZFWi7AaQN/+tNl9Qgw=", 
+        "email": "", 
+        "date_joined": "2013-06-10T13:40:59.500Z"
     }
+}
 ]
