@@ -18,7 +18,7 @@
                     <p><small><b>Date of birth</b></small>: {{ p.birth_date }}</p>
                     <p style="max-width: 250px;"><small><b>Photo:</b></small></p>
                     {% if p.photo %}
-                    <img src={{ p.photo }} class="img-rounded" />
+                    <img src="/media/{{ p.photo }}" class="img-rounded" />
                     {% else %}
                         <h3>Error: no photo found.</h3>
                     {% endif %}
