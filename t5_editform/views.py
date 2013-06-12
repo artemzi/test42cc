@@ -13,5 +13,5 @@ class CustomProfileUpdateView(LoginRequiredMixin, CsrfExemptMixin, UpdateView):
     model = CustomProfile
     form = EditForm
     template_name = "t5_editform/editform.html"
-    success_url = '/'
+    success_url = '.'
     
