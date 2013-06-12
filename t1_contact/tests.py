@@ -1,15 +1,15 @@
-from selenium import webdriver
-from pyvirtualdisplay import Display
+# from selenium import webdriver
+# from pyvirtualdisplay import Display
 
-display = Display()
-display.start()
+# display = Display()
+# display.start()
 
-browser = webdriver.Firefox()
+# browser = webdriver.Firefox()
 
-try:
-    browser.get('http://localhost:8000')
-    assert 'Index' in browser.title
+# try:
+#     browser.get('http://localhost:8000')
+#     assert 'Index' in browser.title
 
-finally:
-    browser.quit()
-    display.stop()
+# finally:
+#     browser.quit()
+#     display.stop()
