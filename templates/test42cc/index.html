@@ -10,6 +10,7 @@
 
     {% if CustomProfile %}
         {% for p in CustomProfile %}
+        {% if p.pk == 1 %}
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span4">
@@ -35,6 +36,12 @@
                 </div>
             </div>
         </div>
+        {% else %}
+            <div class="alert alert-error">
+                <h4>Error!</h4>
+                    no pk (id) == 1.
+            </div>
+        {% endif %}
         <hr />
         <div class="container-fluid">
             <a href="/requests/">requests</a>
