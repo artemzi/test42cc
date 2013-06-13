@@ -13,6 +13,9 @@
     t5_editform #5(Done):
         TODO: deploy
 
+    t6_ajax #6(+/-):
+        TODO: fix js code, add test
+
 ### TODO:
     
     1. next tiket 
