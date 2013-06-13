@@ -1,5 +1,5 @@
 from django.conf import settings
-from t3_httprequests.models import HttpRequestLogEntry
+from t3_httprequests.models import HttpRequestLog
 from datetime import datetime
 
 
@@ -12,7 +12,7 @@ class HttpRequestDbLoggingMiddleware(object):
 
     def process_request(self, request):
         if getattr(settings,'ENABLE_HTTP_REQUEST_LOGGING'):
-            logentry = HttpRequestLogEntry(
+            logentry = HttpRequestLog(
                             date=datetime.now(),
                             request_method=request.META.get('REQUEST_METHOD','?'),
                             path=request.path[:256],

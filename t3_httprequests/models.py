@@ -1,6 +1,7 @@
 from django.db import models
 
-class HttpRequestLogEntry(models.Model):
+
+class HttpRequestLog(models.Model):
     date = models.DateTimeField('Request date/time', db_index=True)
     request_method = models.CharField('Method', max_length=6, db_index=True)
     path = models.CharField(max_length=256)
