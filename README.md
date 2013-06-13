@@ -19,7 +19,12 @@
 
     t8_templatetags #6(Done):
         TODO: test.
-        
+    
+    t9_countobjects #9(Done):
+        TODO: Done (test include)
+
 ### TODO:
     
     1. next tiket 
+    2. add test to all app in project
+    3. refresh js code
