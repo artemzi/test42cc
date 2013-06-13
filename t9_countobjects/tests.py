@@ -1,16 +1,13 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
 from django.test import TestCase
+from django.core.management import call_command
+from StringIO import StringIO
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
+class CountModelsTest(TestCase):
+    def test_can_call_countmodels(self):
         """
-        Tests that 1 + 1 always equals 2.
+        Tests that countmodels command can be called.
         """
-        self.assertEqual(1 + 1, 2)
+        # http://www.soyoucode.com/2011/capture-output-django-command
+        content = StringIO()
+        call_command("countmodels", stdout=content, stderr=content)
