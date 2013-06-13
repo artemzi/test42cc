@@ -11,4 +11,4 @@ class HttpRequestLogEntry(models.Model):
     #remote_addr = models.CharField(max_length=15) #127.000.000.001
 
     def __unicode__(self):
-        return u'{}'.format(self.query_string)
+        return self.query_string

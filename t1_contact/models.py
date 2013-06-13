@@ -16,7 +16,7 @@ class CustomProfile(models.Model):
     photo = models.ImageField(upload_to="photo", blank=True)
 
     def __unicode__(self):
-        return u'{}'.format(self.first_name)
+        return self.first_name
 
 
 class Update(models.Model):
