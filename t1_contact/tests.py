@@ -3,20 +3,20 @@ from django.conf import settings
  
 from .models import Update
  
-from t3_httprequests.models import HttpRequestLogEntry
+from t3_httprequests.models import HttpRequestLog
 
 
 class SignalsTestCase(TestCase):
     
     def test_http_request_log_entry_create(self):
         self.client.get('/')
-        updates = Update.objects.filter(model_name='HttpRequestLogEntry').filter(update_type='C')
+        updates = Update.objects.filter(model_name='HttpRequestLog').filter(update_type='C')
         self.assertTrue(len(updates) > 0)
 
 
     def test_http_request_log_entry_delete(self):
         self.client.get('/')
-        r = HttpRequestLogEntry.objects.all()[0]
+        r = HttpRequestLog.objects.all()[0]
         r.delete()
-        updates = Update.objects.filter(model_name='HttpRequestLogEntry').filter(update_type='D')
+        updates = Update.objects.filter(model_name='HttpRequestLog').filter(update_type='D')
         self.assertTrue(len(updates) > 0)

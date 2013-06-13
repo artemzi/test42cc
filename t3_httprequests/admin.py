@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import HttpRequestLogEntry
+from .models import HttpRequestLog
 
 
 class HttpRequestLogEntryAdmin(admin.ModelAdmin):
@@ -8,6 +8,6 @@ class HttpRequestLogEntryAdmin(admin.ModelAdmin):
     list_display_links = ('__unicode__', 'priority')
 
     class Meta:
-        model = HttpRequestLogEntry
+        model = HttpRequestLog
 
-admin.site.register(HttpRequestLogEntry, HttpRequestLogEntryAdmin)
+admin.site.register(HttpRequestLog, HttpRequestLogEntryAdmin)
