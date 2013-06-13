@@ -105,7 +105,7 @@
   {% if user.is_authenticated %}
   {% edit_link user %}
   <a href="{% url 'auth_logout' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Logout</a>
-  <a href="{% url 'update' 1 %}" class="pull-right">Edit</a>
+  <a href="{% url 'update' user.id %}" class="pull-right">Edit</a>
   {% else %}
   <a href="{% url 'auth_login' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Log in</a>
   
