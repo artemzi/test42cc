@@ -12,7 +12,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', include('t1_contact.urls')),
     url(r'^requests/$', include('t3_httprequests.urls')),
-    url(r'^update/(?P<pk>\d+)/$',  CustomProfileUpdateView.as_view()),
+    url(r'^update/(?P<pk>\d+)/$',  CustomProfileUpdateView.as_view(), name="update"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

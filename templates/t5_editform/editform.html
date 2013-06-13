@@ -6,37 +6,56 @@
     <div class="span1"></div>
     <div class="span11">
 
-    <form class="form-horizontal" enctype="multipart/form-data" method="post">{% csrf_token %}
+    <form id="ajax_form" enctype="multipart/form-data" method="post" action=".">{% csrf_token %}
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span4">
-                    <p><small><b>Name</b></small>:</p> {{ form.first_name }}
-                    <p><small><b>Last Name</b></small>:</p> {{ form.last_name }}
-                    <p><small><b>Date of birth</b></small>:</p> {{ form.birth_date }}<br />
+                    <label>First Name:</label>
+                    {{ form.first_name }}
+                    <label>Last Name:</label>
+                    {{ form.last_name }}
+                    <label>Birth date:</label>
+                     {{ form.birth_date }}<br />
                     {% if form.instance.photo %}
-                    <div>
-                        <p><small><b>Photo</b></small>:</p> {{ form.photo }}
-                        <img src="{{ form.instance.photo.url }}" class="img-rounded" style="margin-top: 50px;"/>
-                    </div>
+                    <label>Photo:</label>
+                    <img src="{{ form.instance.photo.url }}" class="img-rounded" style="margin-top: 10px;"/>
+                    {{ form.photo }}
+                    
+                    
                     {% else %}
-                        <p><small><b>Photo</b></small>:</p> {{ form.photo }}
+                        <label>Photo:</label>
+                        {{ form.photo }}
                     {% endif %}
                 </div>
                 <div class="span4">
                     <p>Contacts:</p>
-                        <p><small><b>Email:</b></small></p> {{ form.email}}
-                        <p><small><b>Jabber:</b></small></p> {{ form.jabber }}
-                        <p><small><b>Skype:</b></small></p> {{ form.skype }}
-                        <p><small><b>Other Contacts:</b></small></p>
-                            {{ form.other_contacts }}
-                    <p style="max-width: 250px;"><small><b>Bio:</b></small></p>
+                    <label>Email:</label>
+                     {{ form.email  }}
+                    <label>Jabber:</label>
+                    {{ form.jabber }}
+                    <label>Skype:</label>
+                    {{ form.skype }}
+                    <label>Other Contacts:</label>
+                    {{ form.other_contacts }}
+                    <label>Bio:</label>
                     {{ form.bio }}
                 </div>
             </div>
-                <button type="submit" class="btn">Save</button>
-                <a href="/">Cancel</a>
-        </div>
+
+            <!-- submit block -->
+            <div class="row" style="margin-top: 20px;">
+                <div class="span1">
+                    <input class="btn" type="submit" value="Send" id="refresh">
+                </div>
+                    <div id="loading-status" ></div>
+                <div class="span1">
+                    <a href="/">Cancel</a>
+                </div>
+
         <hr />
+            </div>
+
+        </div>
 
     </div>
 

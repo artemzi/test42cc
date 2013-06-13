@@ -64,15 +64,45 @@
 
     </style>
     <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#ajax_form').ajaxForm({
+              target:        '#ajax_form',
+              beforeSubmit:  showRequest,
+              success:       showResponse 
+            }); 
+            function showRequest(formData, jqForm, options) { 
+                var queryString = $.param(formData);
+             
+                alert('After update you can see changes in model.');
+                return true; 
+            } 
+
+            function showResponse(responseText, statusText, xhr, $form)  {
+                
+                document.write('<img src="/static/img/ajax-loader.gif" class="img-rounded" style="margin-left: 33%"/>')
+                 
+                document.write('<p style="margin-right: 20%">Lodaing...</p>')
+                window.setTimeout("location=('/');",3000);
+            } 
+        }); 
+
+    </script>
 </head>
 
 <body>
   <div class="container">
     <br />
   {% if user.is_authenticated %}
-  <a href="{% url 'auth_logout' %}" class="pull-right">Logout</a>
+  <a href="{% url 'auth_logout' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Logout</a>
+  <a href="/" class="pull-right">Home</a>
   {% else %}
-  <a href="{% url 'auth_login' %}" class="pull-right">Log in</a>
+  <a href="{% url 'auth_login' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Log in</a>
+  <a href="/" class="pull-right">Home</a>
   {% endif %}
   </div>
 

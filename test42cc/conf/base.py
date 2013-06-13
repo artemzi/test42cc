@@ -173,6 +173,7 @@ INSTALLED_APPS = (
     't1_contact',
     't3_httprequests',
     't4_context_processor',
+    't5_editform',
 )
 
 # A sample logging configuration. The only tangible logging
