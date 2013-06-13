@@ -1,3 +1,4 @@
+{% load auth_user_extra %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,14 +100,15 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container pull-right">
     <br />
   {% if user.is_authenticated %}
+  {% edit_link user %}
   <a href="{% url 'auth_logout' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Logout</a>
-  <a href="/" class="pull-right">Home</a>
+  <a href="{% url 'update' 1 %}" class="pull-right">Edit</a>
   {% else %}
   <a href="{% url 'auth_login' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Log in</a>
-  <a href="/" class="pull-right">Home</a>
+  
   {% endif %}
   </div>
 
