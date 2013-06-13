@@ -15,7 +15,11 @@
 
     t6_ajax #6(+/-):
         TODO: fix js code, add test
+        fix Error in merge (need --no-ff) - how?
 
+    t8_templatetags #6(Done):
+        TODO: test.
+        
 ### TODO:
     
     1. next tiket 
