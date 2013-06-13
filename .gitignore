@@ -1,3 +1,6 @@
+# error output file
+*.dat
+
 # Python bytecode:
 *.py[co]
 

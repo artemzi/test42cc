@@ -19,4 +19,4 @@ collectstatic:
 	$(MANAGE) collectstatic
 
 test:
-	$(MANAGE) test t1_contact t4_context_processor
+	$(MANAGE) test t1_contact t4_context_processor t9_countobjects

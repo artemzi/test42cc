@@ -174,6 +174,7 @@ INSTALLED_APPS = (
     't3_httprequests',
     't4_context_processor',
     't5_editform',
+    't9_countobjects',
 )
 
 # A sample logging configuration. The only tangible logging
