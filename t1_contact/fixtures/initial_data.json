@@ -8,9 +8,29 @@
             "email": "arzinoviev@gmail.com",
             "jabber": "arzinoviev@gmail.com",
             "skype": "zinovievartem",
-            "other_contacts": "mobile phone: ++380990305593"
+            "other_contacts": "mobile phone: +380990305593",
+            "photo": null
         },
-        "model": "t1_contact.Person",
+        "model": "t1_contact.CustomProfile",
         "pk": 1
+    },
+    {
+      "pk": 1, 
+      "model": "auth.user", 
+      "fields": {
+        "username": "admin", 
+        "first_name": "", 
+        "last_name": "", 
+        "is_active": true, 
+        "is_superuser": true, 
+        "is_staff": true, 
+        "last_login": "2013-06-12T07:03:27.502Z", 
+        "groups": [], 
+        "user_permissions": [], 
+        "password": "pbkdf2_sha256$10000$aeeV50JxoqVi$O3O9stD/BVikvGVNNeDthe/UgZNxgd0oEO65nEHpfbk=", 
+        "email": "", 
+        "date_joined": "2013-06-12T07:03:27.502Z"
+      }
     }
+
 ]
