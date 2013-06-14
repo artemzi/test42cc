@@ -5,26 +5,47 @@
 {% block content %}
 
     <h3>42 Coffee Cups Test Assignment</h3>
-    {% if person %}
-        {% for p in person %}
-            <div style="float: left; width: 250px">
-                <p><small>Name</small>: {{ p.first_name }}</p>
-                <p><small>Last Name</small>: {{ p.last_name }}</p>
-                <p><small>Date of birth</small>: {{ p.birth_date }}</p>
-                <p><small>Bio:</small>
-                    <p>{{ p.bio }}</p>
+
+
+
+    {% if CustomProfile %}
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <p><small><b>Name</b></small>: {{ CustomProfile.first_name }}</p>
+                    <p><small><b>Last Name</b></small>: {{ CustomProfile.last_name }}</p>
+                    <p><small><b>Date of birth</b></small>: {{ CustomProfile.birth_date }}</p>
+                    <p style="max-width: 250px;"><small><b>Photo:</b></small></p>
+                    {% if CustomProfile.photo %}
+                    <img src="/media/{{ CustomProfile.photo }}" class="img-rounded" />
+                    {% else %}
+                    <div class="alert alert-error">
+                        <h3>Error: no photo found.</h3>
+                    </div>
+                        
+                    {% endif %}
+                </div>
+                <div class="span4">
+                    <p>Contacts:</p>
+                        <p><small><b>Email:</b></small> {{ CustomProfile.email}}</p>
+                        <p><small><b>Jabber:</b></small> {{ CustomProfile.jabber }}</p>
+                        <p><small><b>Skype:</b></small> {{ CustomProfile.skype }}</p>
+                        <p><small><b>Other Contacts:</b></small>
+                            {{ CustomProfile.other_contacts }}</p>
+                    <p style="max-width: 250px;"><small><b>Bio:</b></small>
+                    {{ CustomProfile.bio }}</p>
+                </div>
             </div>
-            <div style="float: left; width: 350px">
-            <p>Contacts:</p>
-                <p><small>Email:</small> {{ p.email}}</p>
-                <p><small>Jabber:</small> {{ p.jabber }}</p>
-                <p><small>Skype:</small> {{ p.skype }}</p>
-                <p><small>Other Contacts:</small>
-                    {{ p.other_contacts }}</p>
-            <br />
-            </div>
-        {% endfor %}
-    {% else %}
+        </div>
+        
+            
+        
+        <hr />
+        <div class="container-fluid">
+            <a href="/requests/">requests</a>
+        </div>    
+       
+    
         <p>no person found.</p>
     {% endif %}
 {% endblock content %}

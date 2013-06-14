@@ -5,6 +5,6 @@ from .views import HomePersonListView
 
 urlpatterns = patterns(
     '',
-   url(r'^$', HomePersonListView.as_view()),
+   url(r'^$', HomePersonListView.as_view(), name="person-detail"),
 
    )
