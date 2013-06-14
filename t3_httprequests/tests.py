@@ -1,11 +1,12 @@
 from django.test import TestCase
  
+from t3_httprequests.models import HttpRequestLog
  
 class HttpRequestLogEntryTest(TestCase):
 
     def test_request_is_saved(self):
         self.client.get('/')
-        self.assertTrue(len(HttpRequestLogEntry.objects.all()) > 0)
+        self.assertTrue(len(HttpRequestLog.objects.all()) > 0)
 
     def test_no_more_than_ten(self):
         number_of_requests = 11
