@@ -8,9 +8,11 @@ Replace this with more appropriate tests for your application.
 from django.test import TestCase
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
+class EditFormTest(TestCase):
+    def test_that_login_exists(self):
         """
-        Tests that 1 + 1 always equals 2.
+        when you try go to editpage.html in response 
+        you have login form
         """
-        self.assertEqual(1 + 1, 2)
+        response = self.client.get('/update/1')
+        field_names_in_view = ["Username", "Password"]
