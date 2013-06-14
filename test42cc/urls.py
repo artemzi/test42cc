@@ -13,7 +13,8 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    (r'^', lambda request: HttpResponsePermanentRedirect('/1')),
+    (r'^$',
+     lambda request: HttpResponsePermanentRedirect('/1')),
     url(r'^(?P<pk>\d+)/$', include('t1_contact.urls')),
     url(r'^requests/$', include('t3_httprequests.urls')),
     url(r'^update/(?P<pk>\d+)/$',  CustomProfileUpdateView.as_view(), name="update"),
