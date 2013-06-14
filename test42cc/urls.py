@@ -10,7 +10,7 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', include('t1_contact.urls')),
+    url(r'^(?P<pk>[-_\w]+)/$', include('t1_contact.urls')),
     url(r'^requests/$', include('t3_httprequests.urls')),
     url(r'^update/(?P<pk>\d+)/$',  CustomProfileUpdateView.as_view(), name="update"),
 

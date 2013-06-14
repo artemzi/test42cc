@@ -9,45 +9,43 @@
 
 
     {% if CustomProfile %}
-        {% for p in CustomProfile %}
-        {% if p.pk == 1 %}
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span4">
-                    <p><small><b>Name</b></small>: {{ p.first_name }}</p>
-                    <p><small><b>Last Name</b></small>: {{ p.last_name }}</p>
-                    <p><small><b>Date of birth</b></small>: {{ p.birth_date }}</p>
+                    <p><small><b>Name</b></small>: {{ CustomProfile.first_name }}</p>
+                    <p><small><b>Last Name</b></small>: {{ CustomProfile.last_name }}</p>
+                    <p><small><b>Date of birth</b></small>: {{ CustomProfile.birth_date }}</p>
                     <p style="max-width: 250px;"><small><b>Photo:</b></small></p>
-                    {% if p.photo %}
-                    <img src="/media/{{ p.photo }}" class="img-rounded" />
+                    {% if CustomProfile.photo %}
+                    <img src="/media/{{ CustomProfile.photo }}" class="img-rounded" />
                     {% else %}
+                    <div class="alert alert-error">
                         <h3>Error: no photo found.</h3>
+                    </div>
+                        
                     {% endif %}
                 </div>
                 <div class="span4">
                     <p>Contacts:</p>
-                        <p><small><b>Email:</b></small> {{ p.email}}</p>
-                        <p><small><b>Jabber:</b></small> {{ p.jabber }}</p>
-                        <p><small><b>Skype:</b></small> {{ p.skype }}</p>
+                        <p><small><b>Email:</b></small> {{ CustomProfile.email}}</p>
+                        <p><small><b>Jabber:</b></small> {{ CustomProfile.jabber }}</p>
+                        <p><small><b>Skype:</b></small> {{ CustomProfile.skype }}</p>
                         <p><small><b>Other Contacts:</b></small>
-                            {{ p.other_contacts }}</p>
+                            {{ CustomProfile.other_contacts }}</p>
                     <p style="max-width: 250px;"><small><b>Bio:</b></small>
-                    {{ p.bio }}</p>
+                    {{ CustomProfile.bio }}</p>
                 </div>
             </div>
         </div>
-        {% else %}
-            <div class="alert alert-error">
-                <h4>Error!</h4>
-                    no pk (id) == 1.
-            </div>
-        {% endif %}
+        
+            
+        
         <hr />
         <div class="container-fluid">
             <a href="/requests/">requests</a>
         </div>    
-        {% endfor %}
-    {% else %}
+       
+    
         <p>no person found.</p>
     {% endif %}
 {% endblock content %}
