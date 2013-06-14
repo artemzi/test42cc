@@ -5,7 +5,30 @@ from .models import Update
  
 from t3_httprequests.models import HttpRequestLog
 
+class HomePersonTestCase(TestCase):
+    
+    def test_index_content(self):
+        """
+        Tests that data exists in the view.
+        """
+        response = self.client.get('/')
+        field_names_in_view = [
+                "Contacts",
+                "Email",
+                "Jabber",
+                "Skype",
+                "Other Contacts",
+                ]
+        data_in_view = [
+                "Artem",
+                "Zinoviev",
+                "1983",
+                "gmail.com",
+                "zinovievartem",
+                "mobile"
+                ]
 
+                
 class SignalsTestCase(TestCase):
     
     def test_http_request_log_entry_create(self):
