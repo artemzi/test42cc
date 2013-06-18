@@ -1,11 +1,126 @@
+{% load auth_user_extra %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>42cc | {% block title %}{% endblock title %}</title>
+    <meta charset="utf-8">
+    <title>{{ BASE_TEMPLATE_TITLE }} | {% block title %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- CSS -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+        height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+      }
+
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+      }
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+    </style>
+    <link href="/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/bootstrap-sortable.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>   
+    <script src="http://malsup.github.com/jquery.form.js"></script>
+
+    <script src="/static/js/bootstrap-sortable.js"></script> 
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $( "#id_birth_date" ).datepicker();
+
+            $('#ajax_form').ajaxForm({
+              target:        '#ajax_form',
+              beforeSubmit:  showRequest,
+              success:       showResponse 
+            }); 
+            function showRequest(formData, jqForm, options) { 
+                var queryString = $.param(formData);
+             
+                alert('After update you can see changes in model.');
+                return true; 
+            } 
+
+            function showResponse(responseText, statusText, xhr, $form)  {
+                
+                document.write('<img src="/static/img/ajax-loader.gif" class="img-rounded" style="margin-left: 33%"/>')
+                 
+                document.write('<p style="margin-right: 20%">Lodaing...</p>')
+                window.setTimeout("location=('/1');",3000);
+            } 
+            
+        }); 
+
+    </script>
 </head>
 
 <body>
+  <div class="container pull-right">
+    <br />
+  {% if user.is_authenticated %}
+  {% edit_link user %}
+  <a href="{% url 'auth_logout' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Logout</a>
+  <a href="{% url 'update' user.id %}" class="pull-right">Edit</a>
+  {% else %}
+  <a href="{% url 'auth_login' %}" class="pull-right" style="margin-right: 10px; margin-left: 10px">Log in</a>
+  
+  {% endif %}
+  </div>
+
 {% block content %}{% endblock content %}
+
+
+    <script src="/static/js/bootstrap.min.js"></script>
 
 
 </body>

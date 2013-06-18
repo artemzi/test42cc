@@ -1,0 +1,19 @@
+{% extends "registration/registration_base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+<div class="container">
+<form class="form" method="post" action="{% url 'auth_login' %}">{% csrf_token %}
+<label>{{ form.username.label_tag }}</label>{{ form.username }}
+<label>{{ form.password.label_tag }}</label>{{ form.password }}
+
+<p><a href="{% url 'auth_password_reset' %}">Forgot</a> your password?  <a href="{% url 'registration_register' %}">Need an account</a>?</p>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}42 Coffee Cups Test Assignment: Edit{% endblock title %}
+
+
+{% block content %}
+    <div class="span1"></div>
+    <div class="span11">
+
+    <form id="ajax_form" enctype="multipart/form-data" method="post" action=".">{% csrf_token %}
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <label>First Name:</label>
+                    {{ form.first_name }}
+                    <label>Last Name:</label>
+                    {{ form.last_name }}
+                    <label>Birth date:</label>
+                     {{ form.birth_date }}<br />
+                    {% if form.instance.photo %}
+                    <label>Photo:</label>
+                    <img src="{{ form.instance.photo.url }}" class="img-rounded" style="margin-top: 10px;"/>
+                    {{ form.photo }}
+                    
+                    
+                    {% else %}
+                        <label>Photo:</label>
+                        {{ form.photo }}
+                    {% endif %}
+                </div>
+                <div class="span4">
+                    <p>Contacts:</p>
+                    <label>Email:</label>
+                     {{ form.email  }}
+                    <label>Jabber:</label>
+                    {{ form.jabber }}
+                    <label>Skype:</label>
+                    {{ form.skype }}
+                    <label>Other Contacts:</label>
+                    {{ form.other_contacts }}
+                    <label>Bio:</label>
+                    {{ form.bio }}
+                </div>
+            </div>
+
+            <!-- submit block -->
+            <div class="row" style="margin-top: 20px;">
+                <div class="span1">
+                    <input class="btn" type="submit" value="Send" id="refresh">
+                </div>
+                    <div id="loading-status" ></div>
+                <div class="span1">
+                    <a href="/1">Cancel</a>
+                </div>
+
+        <hr />
+            </div>
+
+        </div>
+
+    </div>
+
+
+{% endblock content %}

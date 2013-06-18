@@ -1,5 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic import UpdateView
+
+from django.http import HttpResponsePermanentRedirect
+
 from django.conf import settings
 
 from t5_editform.views import CustomProfileUpdateView
@@ -10,7 +13,9 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^(?P<pk>[-_\w]+)/$', include('t1_contact.urls')),
+    (r'^$',
+     lambda request: HttpResponsePermanentRedirect('/1')),
+    url(r'^(?P<pk>\d+)/$', include('t1_contact.urls')),
     url(r'^requests/$', include('t3_httprequests.urls')),
     url(r'^update/(?P<pk>\d+)/$',  CustomProfileUpdateView.as_view(), name="update"),
 
